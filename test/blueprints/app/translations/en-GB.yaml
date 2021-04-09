@@ -1,0 +1,9 @@
+foo: "foo"
+bar: ""
+baz:
+qux:
+  foo: "foo"
+  bar: ""
+  baz:
+  qux:
+    foo: {}

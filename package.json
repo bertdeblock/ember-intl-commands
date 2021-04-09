@@ -1,0 +1,64 @@
+{
+  "name": "ember-intl-commands",
+  "version": "0.1.0",
+  "description": "Useful commands for managing your ember-intl translation files.",
+  "repository": "https://github.com/bertdeblock/ember-intl-commands",
+  "license": "MIT",
+  "author": "Bert De Block",
+  "main": "lib/index.js",
+  "bin": "bin/index.js",
+  "files": [
+    "bin/",
+    "lib/"
+  ],
+  "scripts": {
+    "lint": "eslint . --cache",
+    "lint:fix": "eslint . --fix",
+    "start": "ava --watch",
+    "test": "ava"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "ava": {
+    "files": [
+      "test/commands/**/*.js",
+      "test/utils/**/*.js"
+    ],
+    "ignoredByWatcher": [
+      "test/output"
+    ]
+  },
+  "dependencies": {
+    "deep-sort-object": "^1.0.2",
+    "fs-extra": "^9.1.0",
+    "js-yaml": "^4.0.0",
+    "lodash": "^4.17.21",
+    "omit-empty": "^1.0.0",
+    "yargs": "^16.2.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "ava": "^3.15.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "husky": "^4.3.8",
+    "prettier": "^2.2.1",
+    "recursive-copy": "^2.0.11",
+    "uuid": "^8.3.2"
+  },
+  "engines": {
+    "node": ">= 12"
+  }
+}

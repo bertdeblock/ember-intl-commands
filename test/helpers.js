@@ -23,7 +23,7 @@ async function copyBlueprint(blueprintName) {
 }
 
 function outputPathExists() {
-  return fsExtra.pathExists(outputPath(...arguments));
+  return fsExtra.pathExistsSync(outputPath(...arguments));
 }
 
 function outputPath() {

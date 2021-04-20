@@ -8,17 +8,26 @@ Useful commands for managing your [ember-intl](https://github.com/ember-intl/emb
 
 ## Commands
 
+- [list-locales](#list-locales)
 - [move-key](#move-key)
 - [remove-key](#remove-key)
 - [sort-keys](#sort-keys)
 - [strip-empty-keys](#strip-empty-keys)
 - [to-ext](#to-ext)
 
+### list-locales
+
+List all locales.
+
+```shell
+npx ember-intl-commands list-locales
+```
+
 ### move-key
 
 Move a key.
 
-```bash
+```shell
 npx ember-intl-commands move-key "old.key" "new.key"
 ```
 
@@ -26,7 +35,7 @@ npx ember-intl-commands move-key "old.key" "new.key"
 
 Remove a key.
 
-```bash
+```shell
 npx ember-intl-commands remove-key "some.key"
 ```
 
@@ -34,7 +43,7 @@ npx ember-intl-commands remove-key "some.key"
 
 Sort keys.
 
-```bash
+```shell
 npx ember-intl-commands sort-keys
 ```
 
@@ -42,7 +51,7 @@ npx ember-intl-commands sort-keys
 
 Strip empty keys.
 
-```bash
+```shell
 npx ember-intl-commands strip-empty-keys
 ```
 
@@ -50,7 +59,7 @@ npx ember-intl-commands strip-empty-keys
 
 Convert all files to `json`, `yaml` or `yml`.
 
-```bash
+```shell
 npx ember-intl-commands to-ext "json"
 npx ember-intl-commands to-ext "yaml"
 npx ember-intl-commands to-ext "yml"

@@ -6,6 +6,7 @@ const { cwd } = require('process');
 const { hideBin } = require('yargs/helpers');
 const yargs = require('yargs/yargs');
 
+const listLocales = require('../lib/commands/list-locales');
 const moveKey = require('../lib/commands/move-key');
 const removeKey = require('../lib/commands/remove-key');
 const sortKeys = require('../lib/commands/sort-keys');
@@ -13,6 +14,14 @@ const stripEmptyKeys = require('../lib/commands/strip-empty-keys');
 const toExt = require('../lib/commands/to-ext');
 
 yargs(hideBin(process.argv))
+  .command({
+    command: 'list-locales',
+    describe: 'List all locales',
+
+    handler() {
+      listLocales(cwd());
+    },
+  })
   .command({
     command: 'move-key [key] [to]',
     describe: 'Move a key',

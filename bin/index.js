@@ -68,7 +68,7 @@ yargs(hideBin(process.argv))
   })
   .command({
     command: 'strip-empty-keys',
-    describe: 'Strip empty keys',
+    describe: 'Strip empty keys (`""`, `null` or `{}`)',
 
     handler() {
       stripEmptyKeys(cwd());

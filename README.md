@@ -23,6 +23,17 @@ List all locales.
 npx ember-intl-commands list-locales
 ```
 
+Output:
+
+```shell
+3 locales found:
+[
+  'en-AU',
+  'en-GB',
+  'en-US'
+]
+```
+
 ### move-key
 
 Move a key.
@@ -49,7 +60,7 @@ npx ember-intl-commands sort-keys
 
 ### strip-empty-keys
 
-Strip empty keys.
+Strip empty keys (`""`, `null` or `{}`).
 
 ```shell
 npx ember-intl-commands strip-empty-keys

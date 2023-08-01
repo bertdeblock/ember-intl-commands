@@ -8,18 +8,18 @@ on:
 
 jobs:
   test:
+    name: Node.js v${{matrix.node-version}}
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x]
+        node-version: [16, 18, 20]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js v${{matrix.node-version}}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{matrix.node-version}}
-    - run: yarn install --frozen-lockfile
-    - run: yarn lint
-    - run: yarn test
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{matrix.node-version}}
+      - run: yarn install --frozen-lockfile
+      - run: yarn lint
+      - run: yarn test

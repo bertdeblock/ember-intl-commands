@@ -1,19 +1,23 @@
-'use strict';
+"use strict";
 
 module.exports = {
   env: {
     node: true,
   },
-  extends: ['eslint:recommended', 'plugin:n/recommended', 'plugin:prettier/recommended'],
-  parser: '@babel/eslint-parser',
+  extends: [
+    "eslint:recommended",
+    "plugin:n/recommended",
+    "plugin:prettier/recommended",
+  ],
+  parser: "@babel/eslint-parser",
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaVersion: "latest",
     requireConfigFile: false,
-    sourceType: 'script',
+    sourceType: "script",
   },
-  plugins: ['prettier'],
+  plugins: ["prettier"],
   root: true,
   rules: {
-    strict: 'error',
+    strict: "error",
   },
 };

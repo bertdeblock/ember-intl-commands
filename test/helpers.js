@@ -1,16 +1,16 @@
-'use strict';
+"use strict";
 
-const fsExtra = require('fs-extra');
-const path = require('path');
-const recursiveCopy = require('recursive-copy');
-const { v4: uuidv4 } = require('uuid');
+const fsExtra = require("fs-extra");
+const path = require("path");
+const recursiveCopy = require("recursive-copy");
+const { v4: uuidv4 } = require("uuid");
 
 function cleanupOutput() {
   return fsExtra.remove(outputPath(...arguments));
 }
 
 async function copyBlueprint(blueprintName) {
-  const sourcePath = testPath('blueprints', blueprintName);
+  const sourcePath = testPath("blueprints", blueprintName);
   const targetDir = uuidv4();
   const targetPath = outputPath(targetDir);
 
@@ -27,7 +27,7 @@ function outputPathExists() {
 }
 
 function outputPath() {
-  return testPath('output', ...arguments);
+  return testPath("output", ...arguments);
 }
 
 function testPath() {

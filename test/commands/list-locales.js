@@ -1,8 +1,6 @@
-"use strict";
-
-const test = require("ava");
-const { cleanupOutput, copyBlueprint } = require("../helpers");
-const listLocales = require("../../lib/commands/list-locales");
+import test from "ava";
+import { cleanupOutput, copyBlueprint } from "../helpers.js";
+import listLocales from "../../lib/commands/list-locales.js";
 
 test("it lists all locales", async function (t) {
   const blueprint = await copyBlueprint("app");

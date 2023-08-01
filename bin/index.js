@@ -1,17 +1,15 @@
 #!/usr/bin/env node
 
-"use strict";
+import { cwd } from "process";
+import { hideBin } from "yargs/helpers";
+import yargs from "yargs/yargs";
 
-const { cwd } = require("process");
-const { hideBin } = require("yargs/helpers");
-const yargs = require("yargs/yargs");
-
-const listLocales = require("../lib/commands/list-locales");
-const moveKey = require("../lib/commands/move-key");
-const removeKey = require("../lib/commands/remove-key");
-const sortKeys = require("../lib/commands/sort-keys");
-const stripEmptyKeys = require("../lib/commands/strip-empty-keys");
-const toExt = require("../lib/commands/to-ext");
+import listLocales from "../lib/commands/list-locales.js";
+import moveKey from "../lib/commands/move-key.js";
+import removeKey from "../lib/commands/remove-key.js";
+import sortKeys from "../lib/commands/sort-keys.js";
+import stripEmptyKeys from "../lib/commands/strip-empty-keys.js";
+import toExt from "../lib/commands/to-ext.js";
 
 yargs(hideBin(process.argv))
   .command({

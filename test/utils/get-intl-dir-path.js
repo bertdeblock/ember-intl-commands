@@ -1,9 +1,7 @@
-"use strict";
-
-const test = require("ava");
-const path = require("path");
-const { cleanupOutput, copyBlueprint } = require("../helpers");
-const getIntlDirPath = require("../../lib/utils/get-intl-dir-path");
+import test from "ava";
+import path from "path";
+import { cleanupOutput, copyBlueprint } from "../helpers.js";
+import getIntlDirPath from "../../lib/utils/get-intl-dir-path.js";
 
 test("it gets the absolute path to the intl directory", async function (t) {
   const blueprint = await copyBlueprint("app-with-config");

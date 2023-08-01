@@ -1,5 +1,3 @@
-"use strict";
-
 module.exports = {
   env: {
     node: true,
@@ -9,10 +7,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: "latest",
     requireConfigFile: false,
-    sourceType: "script",
+    sourceType: "module",
   },
   root: true,
-  rules: {
-    strict: "error",
-  },
 };

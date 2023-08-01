@@ -1,9 +1,8 @@
-"use strict";
-
-const fsExtra = require("fs-extra");
-const path = require("path");
-const recursiveCopy = require("recursive-copy");
-const { v4: uuidv4 } = require("uuid");
+import fsExtra from "fs-extra";
+import path from "path";
+import recursiveCopy from "recursive-copy";
+import { fileURLToPath } from "url";
+import { v4 as uuidv4 } from "uuid";
 
 function cleanupOutput() {
   return fsExtra.remove(outputPath(...arguments));
@@ -31,13 +30,7 @@ function outputPath() {
 }
 
 function testPath() {
-  return path.join(__dirname, ...arguments);
+  return path.join(path.dirname(fileURLToPath(import.meta.url)), ...arguments);
 }
 
-module.exports = {
-  cleanupOutput,
-  copyBlueprint,
-  outputPathExists,
-  outputPath,
-  testPath,
-};
+export { cleanupOutput, copyBlueprint, outputPathExists, outputPath, testPath };

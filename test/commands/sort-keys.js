@@ -1,12 +1,10 @@
-"use strict";
-
-const test = require("ava");
-const path = require("path");
-const { cleanupOutput, copyBlueprint } = require("../helpers");
-const sortKeys = require("../../lib/commands/sort-keys");
-const IntlFileJson = require("../../lib/models/intl-file-json");
-const IntlFileYaml = require("../../lib/models/intl-file-yaml");
-const IntlFileYml = require("../../lib/models/intl-file-yml");
+import test from "ava";
+import path from "path";
+import { cleanupOutput, copyBlueprint } from "../helpers.js";
+import sortKeys from "../../lib/commands/sort-keys.js";
+import IntlFileJson from "../../lib/models/intl-file-json.js";
+import IntlFileYaml from "../../lib/models/intl-file-yaml.js";
+import IntlFileYml from "../../lib/models/intl-file-yml.js";
 
 test("it sorts keys", async function (t) {
   const blueprint = await copyBlueprint("app");

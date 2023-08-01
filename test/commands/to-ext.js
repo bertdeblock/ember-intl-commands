@@ -1,12 +1,6 @@
-"use strict";
-
-const test = require("ava");
-const {
-  cleanupOutput,
-  copyBlueprint,
-  outputPathExists,
-} = require("../helpers");
-const toExt = require("../../lib/commands/to-ext");
+import test from "ava";
+import { cleanupOutput, copyBlueprint, outputPathExists } from "../helpers.js";
+import toExt from "../../lib/commands/to-ext.js";
 
 test("it converts all files to `json`", async function (t) {
   const blueprint = await copyBlueprint("app");

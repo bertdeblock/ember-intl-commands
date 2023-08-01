@@ -8,6 +8,7 @@ on:
 
 jobs:
   test:
+    name: Node.js v${{matrix.node-version}}
     runs-on: ubuntu-latest
 
     strategy:
@@ -16,8 +17,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Node.js v${{matrix.node-version}}
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: ${{matrix.node-version}}
       - run: yarn install --frozen-lockfile

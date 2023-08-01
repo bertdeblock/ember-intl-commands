@@ -11,6 +11,7 @@ Useful commands for managing your [ember-intl](https://github.com/ember-intl/emb
 - [remove-key](#remove-key)
 - [sort-keys](#sort-keys)
 - [strip-empty-keys](#strip-empty-keys)
+- [to-casing](#to-casing)
 - [to-ext](#to-ext)
 
 ### list-locales
@@ -62,6 +63,16 @@ Strip empty keys (`""`, `null` or `{}`).
 
 ```shell
 npx ember-intl-commands strip-empty-keys
+```
+
+### to-casing
+
+Convert all keys to `camelCase`, `param-case` or `snake_case`.
+
+```shell
+npx ember-intl-commands to-casing "camel"
+npx ember-intl-commands to-casing "param"
+npx ember-intl-commands to-casing "snake"
 ```
 
 ### to-ext

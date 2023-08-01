@@ -9,6 +9,7 @@ import moveKey from "../lib/commands/move-key.js";
 import removeKey from "../lib/commands/remove-key.js";
 import sortKeys from "../lib/commands/sort-keys.js";
 import stripEmptyKeys from "../lib/commands/strip-empty-keys.js";
+import toCasing from "../lib/commands/to-casing.js";
 import toExt from "../lib/commands/to-ext.js";
 
 yargs(hideBin(process.argv))
@@ -70,6 +71,23 @@ yargs(hideBin(process.argv))
 
     handler() {
       stripEmptyKeys(cwd());
+    },
+  })
+  .command({
+    command: "to-casing [casing]",
+    describe: "Convert all keys to `camelCase`, `param-case` or `snake_case`",
+
+    builder(yargs) {
+      return yargs
+        .positional("casing", {
+          choices: ["camel", "param", "snake"],
+          description: "The casing",
+          type: "string",
+        })
+        .demandOption(["casing"]);
+    },
+    handler(options) {
+      toCasing(cwd(), options.casing);
     },
   })
   .command({

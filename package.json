@@ -32,6 +32,7 @@
     ]
   },
   "dependencies": {
+    "change-case": "^4.1.2",
     "deep-sort-object": "^1.0.2",
     "fs-extra": "^11.1.1",
     "js-yaml": "^4.1.0",

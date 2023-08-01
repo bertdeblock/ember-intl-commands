@@ -1,5 +1,5 @@
 import test from "ava";
-import path from "path";
+import path from "node:path";
 import { cleanupOutput, copyBlueprint } from "../helpers.js";
 import stripEmptyKeys from "../../lib/commands/strip-empty-keys.js";
 import IntlFileJson from "../../lib/models/intl-file-json.js";

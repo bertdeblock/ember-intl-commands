@@ -1,5 +1,5 @@
 import test from "ava";
-import path from "path";
+import path from "node:path";
 import { cleanupOutput, copyBlueprint } from "../helpers.js";
 import getIntlDirPath from "../../lib/utils/get-intl-dir-path.js";
 

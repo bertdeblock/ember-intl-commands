@@ -1,7 +1,7 @@
 import fsExtra from "fs-extra";
-import path from "path";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import recursiveCopy from "recursive-copy";
-import { fileURLToPath } from "url";
 import { v4 as uuidv4 } from "uuid";
 
 function cleanupOutput() {

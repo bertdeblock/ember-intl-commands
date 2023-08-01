@@ -4,13 +4,14 @@ module.exports = {
   env: {
     node: true,
   },
-  extends: ['eslint:recommended', 'plugin:node/recommended', 'plugin:prettier/recommended'],
-  parser: 'babel-eslint',
+  extends: ['eslint:recommended', 'plugin:n/recommended', 'plugin:prettier/recommended'],
+  parser: '@babel/eslint-parser',
   parserOptions: {
-    ecmaVersion: 2019,
+    ecmaVersion: 'latest',
+    requireConfigFile: false,
     sourceType: 'script',
   },
-  plugins: ['node', 'prettier'],
+  plugins: ['prettier'],
   root: true,
   rules: {
     strict: 'error',

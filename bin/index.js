@@ -4,6 +4,7 @@ import { cwd } from "node:process";
 import { hideBin } from "yargs/helpers";
 import yargs from "yargs/yargs";
 
+import collectNewKeys from "../lib/commands/collect-new-keys.js";
 import listLocales from "../lib/commands/list-locales.js";
 import moveKey from "../lib/commands/move-key.js";
 import removeKey from "../lib/commands/remove-key.js";
@@ -13,6 +14,20 @@ import toCasing from "../lib/commands/to-casing.js";
 import toExt from "../lib/commands/to-ext.js";
 
 yargs(hideBin(process.argv))
+  .command({
+    command: "collect-new-keys [locale]",
+    describe: "Collect newly added keys",
+
+    builder(yargs) {
+      return yargs.positional("locale", {
+        description: "The locale to add the new keys to",
+        type: "string",
+      });
+    },
+    handler(options) {
+      collectNewKeys(cwd(), options.locale);
+    },
+  })
   .command({
     command: "list-locales",
     describe: "List all locales",

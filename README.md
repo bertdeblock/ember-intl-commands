@@ -6,6 +6,7 @@ Useful commands for managing your [ember-intl](https://github.com/ember-intl/emb
 
 ## Commands
 
+- [collect-new-keys](#collect-new-keys)
 - [list-locales](#list-locales)
 - [move-key](#move-key)
 - [remove-key](#remove-key)
@@ -13,6 +14,15 @@ Useful commands for managing your [ember-intl](https://github.com/ember-intl/emb
 - [strip-empty-keys](#strip-empty-keys)
 - [to-casing](#to-casing)
 - [to-ext](#to-ext)
+
+### collect-new-keys
+
+Collect newly added keys. `fallbackLocale` will be used if no locale is provided.
+
+```shell
+npx ember-intl-commands collect-new-keys
+npx ember-intl-commands collect-new-keys "en-US"
+```
 
 ### list-locales
 

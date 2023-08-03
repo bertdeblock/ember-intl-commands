@@ -32,17 +32,6 @@ List all locales.
 npx ember-intl-commands list-locales
 ```
 
-Output:
-
-```shell
-3 locales found:
-[
-  'en-AU',
-  'en-GB',
-  'en-US'
-]
-```
-
 ### move-key
 
 Move a key.

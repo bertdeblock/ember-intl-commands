@@ -7,8 +7,18 @@ on:
     branches: [main]
 
 jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: wyvox/action-setup-pnpm@v2
+      - run: pnpm lint
+
   test:
-    name: Node.js v${{matrix.node-version}}
+    name: Test - Node.js v${{matrix.node-version}}
+    needs: [lint]
     runs-on: ubuntu-latest
 
     strategy:
@@ -20,5 +30,4 @@ jobs:
       - uses: wyvox/action-setup-pnpm@v2
         with:
           node-version: ${{matrix.node-version}}
-      - run: pnpm lint
       - run: pnpm test

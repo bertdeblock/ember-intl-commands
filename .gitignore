@@ -3,7 +3,6 @@
 
 # misc
 /.eslintcache
-/yarn-error.log
 
 # test
 /test/output/

@@ -1,2 +1,5 @@
 # test
 /test/output/
+
+# misc
+/pnpm-lock.yaml

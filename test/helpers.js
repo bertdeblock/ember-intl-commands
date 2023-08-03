@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import recursiveCopy from "recursive-copy";
 import { v4 as uuidv4 } from "uuid";
-import getIntlDirPath from '../lib/utils/get-intl-dir-path.js';
+import getIntlDirPath from "../lib/utils/get-intl-dir-path.js";
 
 function cleanupOutput() {
   return fsExtra.remove(outputPath(...arguments));

@@ -1,5 +1,4 @@
 import test from "ava";
-import path from "node:path";
 import { cleanupOutput, copyBlueprint } from "../helpers.js";
 import stripEmptyKeys from "../../lib/commands/strip-empty-keys.js";
 import IntlFileJson from "../../lib/models/intl-file-json.js";
@@ -8,13 +7,12 @@ import IntlFileYml from "../../lib/models/intl-file-yml.js";
 
 test("it strips empty keys", async function (t) {
   const blueprint = await copyBlueprint("app");
-  const intlDirPath = path.join(blueprint.path, "translations");
 
   await stripEmptyKeys(blueprint.path);
 
-  const intlFileJson = new IntlFileJson(intlDirPath, "en-AU");
-  const intlFileYaml = new IntlFileYaml(intlDirPath, "en-GB");
-  const intlFileYml = new IntlFileYml(intlDirPath, "en-US");
+  const intlFileJson = new IntlFileJson(blueprint.intlDirPath, "en-AU");
+  const intlFileYaml = new IntlFileYaml(blueprint.intlDirPath, "en-GB");
+  const intlFileYml = new IntlFileYml(blueprint.intlDirPath, "en-US");
 
   await intlFileJson.readFile();
   await intlFileYaml.readFile();

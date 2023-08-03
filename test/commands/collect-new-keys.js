@@ -1,13 +1,11 @@
 import test from "ava";
-import path from "node:path";
 import { cleanupOutput, copyBlueprint } from "../helpers.js";
 import collectNewKeys from "../../lib/commands/collect-new-keys.js";
 import IntlFileYml from "../../lib/models/intl-file-yml.js";
 
 test("it collects newly added keys", async function (t) {
   const blueprint = await copyBlueprint("app");
-  const intlDirPath = path.join(blueprint.path, "translations");
-  const intlFile = new IntlFileYml(intlDirPath, "en-US");
+  const intlFile = new IntlFileYml(blueprint.intlDirPath, "en-US");
 
   await intlFile.readFile();
 

@@ -19,8 +19,8 @@
     "lint:format:fix": "prettier . --cache --write",
     "lint:js": "eslint . --cache",
     "lint:js:fix": "eslint . --fix",
-    "start": "ava --watch",
-    "test": "ava"
+    "start": "EMBER_INTL_COMMANDS_LOGGING=false ava --watch",
+    "test": "EMBER_INTL_COMMANDS_LOGGING=false ava"
   },
   "ava": {
     "files": [

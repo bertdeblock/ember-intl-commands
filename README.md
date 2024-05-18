@@ -7,6 +7,7 @@ Useful commands for managing your [ember-intl](https://github.com/ember-intl/emb
 ## Commands
 
 - [collect-new-keys](#collect-new-keys)
+- [list-duplicates](#list-duplicates)
 - [list-locales](#list-locales)
 - [move-key](#move-key)
 - [remove-key](#remove-key)
@@ -22,6 +23,15 @@ Collect newly added keys. `fallbackLocale` will be used if no locale is provided
 ```shell
 npx ember-intl-commands collect-new-keys
 npx ember-intl-commands collect-new-keys "en-US"
+```
+
+### list-duplicates
+
+List all duplicate translations. `fallbackLocale` will be used if no locale is provided.
+
+```shell
+npx ember-intl-commands list-duplicates
+npx ember-intl-commands list-duplicates "en-US"
 ```
 
 ### list-locales

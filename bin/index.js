@@ -5,6 +5,7 @@ import { hideBin } from "yargs/helpers";
 import yargs from "yargs/yargs";
 
 import collectNewKeys from "../lib/commands/collect-new-keys.js";
+import listDuplicates from "../lib/commands/list-duplicates.js";
 import listLocales from "../lib/commands/list-locales.js";
 import moveKey from "../lib/commands/move-key.js";
 import removeKey from "../lib/commands/remove-key.js";
@@ -26,6 +27,20 @@ yargs(hideBin(process.argv))
     },
     handler(options) {
       collectNewKeys(cwd(), options.locale);
+    },
+  })
+  .command({
+    command: "list-duplicates [locale]",
+    describe: "List all duplicate translations",
+
+    builder(yargs) {
+      return yargs.positional("locale", {
+        description: "The locale to find duplicates for",
+        type: "string",
+      });
+    },
+    handler(options) {
+      listDuplicates(cwd(), options.locale);
     },
   })
   .command({
